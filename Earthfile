@@ -1,5 +1,5 @@
 VERSION 0.6
-FROM python:3
+FROM python:3.10
 WORKDIR /Earthly
 
 deps:
