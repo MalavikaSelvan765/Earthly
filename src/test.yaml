@@ -1,0 +1,44 @@
+name: Lint Errors Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Linter with Errors
+      run: |
+        echo "name: Lint Errors Example"
+        echo "on:"
+        echo "  push:"
+        echo "    branches:"
+        echo "      - main"
+
+        # Intentional indentation error
+        echo "jobs:"
+          echo "lint:"
+            echo "runs-on: ubuntu-latest"
+
+              # Intentional undefined variable error
+              echo "steps:"
+                echo "  - name: Checkout Repository"
+                  echo "uses: actions/checkout@v2"
+
+    - name: Display Completion Message
+      run: echo "Lint errors intentionally introduced for testing purposes."
