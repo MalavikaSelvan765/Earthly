@@ -1,4 +1,4 @@
-name: Lint Errors Example
+ name: Lint Errors Example
 
 on:
   push:
